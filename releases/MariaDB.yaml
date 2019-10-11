@@ -1,0 +1,15 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: mariadb
+  namespace: demo
+  annotations:
+    flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: semver:~4.0
+spec:
+  releaseName: mariadb
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: mariadb
+    version: 6.10.1
